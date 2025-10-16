@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
-   <head>
-     <title> GitTest</title>
-    </head>
-  <body>
-       <div>
-         <ol>
-           <li>Simspro</li>
-           <li>Marco </li>
-          </ol>
-       </div>
-   </body>
+<html lang="en" ng-app="myLanguageApp">
+<head>
+     <title>My AngularJS|Controllers</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="languages" >
+  Select your favourite Language:
+  <button ng-click="php()"> PHP</button>
+  <button ng-click="Javascript()"> Javascript</button>
+  <button ng-click="cpp()"> C++</button>
+  <button ng-click="java()"> Java</button>
+<p> you have selected: {{ myFavLanguage }} </p>
+</div>
+
+<script>
+var application= angular.module('myLanguageApp',[]);
+application.controller('languages', function($scope) {
+  $scope.myFavLanguage = 'None';
+  $scope.php=function(){
+$scope.myFavLanguage='PHP';
+  };
+ $scope.javascript=function(){
+ $scope.myFavLanguage='Javascript';
+  };
+  $scope.cpp=function(){
+ $scope.myFavLanguage='C++';
+  };
+  $scope.java=function(){
+$scope.myFavLanguage='Java';
+};
+});
+</script>
+
+
+</body>
 </html>
